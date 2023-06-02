@@ -1,0 +1,626 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Roboto:wght@300&display=swap');
+* {
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+:root {
+    --orange : #ff7800;
+    --orange-hover : #fe9a42;
+    --black : #130f40;
+    --light-color : #666;
+   --box-shadow: 0 .5rem 1rem rgba(0, 0,0, .1);
+    --border : .2rem solid rgba(0,0,0,.1);
+    --outline : .1rem solid rgba(0,0,0,.1);
+    --outline-hover : .2rem solid rgba(0,0,0,.1);
+}
+html {
+    font-size: 62.5%;
+   overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+.header {
+    position: fixed;
+    top: 0;left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+}
+.header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--black);
+}
+.header .logo i {
+    color: var(--orange);
+    margin-right: 5px;
+}
+.header .navbar {
+    background-color: #fff;
+    z-index: 10
+}
+
+.header .navbar a {
+    font-size: 1.7rem;
+    margin: 0.1rem;
+    color: var(--black);
+    margin-inline: 10px
+    ;
+}
+.header .navbar a:hover {
+    color: var(--orange);
+}
+
+
+.header .icons div {
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background-color: #eee;
+    color: var(--black);
+    font-size: 2rem;
+    margin-right: .3rem;
+    text-align: center;
+}
+.header .icons div:hover{
+    background-color: var(--orange);
+    color: #eee;
+}
+.header .icons #menu-btn {
+    display: none;
+}
+
+.header .search-form{
+    position: absolute;
+    top: 110%; right:-110%;
+    width: 30rem;
+    height: 5rem;
+    background: #fff;
+    border-radius: .5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+}
+.header .search-form.active {
+    right: 2rem;
+    transition: .4s linear;
+}
+.header .search-form input {
+    height: 100%;
+    width: 100%;
+    background: none;
+    text-transform: none;
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: 0 1rem;
+    border: none;
+}
+.header .search-form label {
+    font-size: 2.2rem;
+    padding-right: 1.5rem;
+    color: var(--black);
+    cursor: pointer;
+   
+}
+.header .search-form label:hover {
+    color: var(--orange);
+}
+
+/* Shopping Cart */
+.header .shopping-cart {
+    background-color: #fff;
+    display: flex;
+    z-index: 99;
+    flex-direction: column;
+    position: absolute;
+    top:110%; right: -110%;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    width: 25%;
+    padding: 10px 15px;
+    width: 35rem;
+}
+.header .shopping-cart.active {
+    right: 2rem;
+    transition: .2s linear;
+}
+.header .shopping-cart .box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20vh;
+}
+.header .shopping-cart .box img {
+    height: 80px;
+    width: 80px ;
+    z-index: 1;
+ 
+}
+.header .shopping-cart .box i {
+    font-size: 2rem;
+  
+}
+.header .shopping-cart .box .content .price {
+    color: var(--light-color);
+    font-size: 1.5rem;
+    margin-right: 20px;
+}
+.header .shopping-cart .box .content .Quantity{
+    color: var(--light-color);
+    font-size: 1.5rem;
+
+}
+
+.header .shopping-cart .box .content h3 {
+    font-size: 1.5rem;
+    color: var(--black);
+    margin-bottom: 10px;
+   
+}
+.header .shopping-cart .total {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--light-color);
+}
+ .btn {
+    width: 100%;
+    height: 4rem;
+    border: 1px solid rgb(232, 231, 231);
+    color: white;
+    text-align: center;
+    font-size: 1.7rem;
+    background-color: var(--orange);
+    padding: 6px;
+    font-family: inherit;
+   ;
+   
+    border-radius: 4px;
+
+}
+.btn:hover {
+    background-color: var(--orange-hover);
+    color: #fff;
+    transition: .2s ease;
+}
+.header .shopping-cart  .btn:hover {
+    background-color: var(--orange);
+    color: white;
+}
+
+.header .login-form {
+    background-color: #fff;
+    position: absolute;
+    top: 110%;right: -110%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 30rem;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    text-align: center;
+    background-color: #fff;
+}
+.header .login-form.active {
+    right: 2rem;
+    transition: .3s ease;
+}
+.header .login-form .box {
+    width: 100%;
+    height: 3.5rem;
+    padding-left: 5px;
+}
+.header .login-form .btn {
+padding-block: 8px;
+font-size: 1.5rem;
+background-color: rgb(231, 229, 229);
+border: none;
+border-radius: 4px;
+}
+.header .login-form .btn:hover {
+    background-color: var(--orange);
+    color: white;
+}
+.header .login-form h4 {
+    font-size: 1.2rem;
+}
+
+
+/* home section */
+ .home {
+   text-align: center;
+ 
+    width: 100%;
+    height: 65vh;
+    background: url(assets/image.jpg) no-repeat;
+    background-size: cover;
+    padding-top: 17rem;
+}
+section .content {
+    color: rgb(246, 246, 246);
+    height: 28vh;
+    font-size: 1.4rem;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+  
+  
+  
+}
+section .content h3 {
+    font-size: 3.5rem;
+    font-family: inherit;
+}
+section .content p {
+    font-size: 1.8rem;
+    font-family: inherit;
+}
+section .content a {
+background-color:green;
+color: white;
+width: 12rem;
+height: 4rem;
+padding-top: 7px;
+font-size: 2rem;
+border-radius: 5px;
+}
+section .content a:hover {
+    background-color: var(--orange);
+}
+
+
+/* 
+feature section */
+.heading {
+    text-align: center;
+    padding: 2rem 0;
+    padding-bottom: 3rem;
+    font-size: 3.5rem;
+    color: var(--black);
+    letter-spacing: .1rem;
+}
+
+.heading span {
+    background-color: var(--orange);
+    color: #fff;
+    padding: .5rem 3rem;
+display: inline-block;
+clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+
+.container .box img {
+    height: 150px;
+    width: 70%;
+}
+section {
+    background-color: #eee;
+}
+.features .container {
+    background-color: #eee;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem , 1fr));
+    padding:2rem 15rem;
+    font-size: 1.5rem;
+ 
+    gap: 3rem;
+}
+.features .container .box {
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+   
+    flex-direction: column;
+    height: 38rem;
+    padding: 4rem 4rem;
+    background: #fffdfd;
+    box-shadow: var(--box-shadow);
+    outline: var(--outline);
+    outline-offset: -1rem;
+   
+    gap: 1rem;
+ 
+}
+ .box:hover {
+ border: 2px solid orange ;
+ border-radius: 4px;
+ box-shadow: 0 2px 3px var(--orange);
+ transition: .1s ease-in-out;
+    
+
+}
+
+
+/* products section */
+
+.product-slider {
+    padding: 2rem 0;
+    width: 75%;
+  
+  
+}
+.product-slider  .box {
+  
+    text-align: center;
+    border: var(--border);
+    font-family: inherit;
+        display: flex;
+        align-items: center;
+       
+        flex-direction: column;
+        height: 40rem;
+        padding: 2rem 4rem;
+        background: #fffdfd;
+        box-shadow: var(--box-shadow);
+        outline: var(--outline);
+        
+        gap: 1rem;
+     
+    }
+    .product-slider  .box:hover {
+        border: 2px solid var(--orange-hover);
+        border-radius: 4px;
+        box-shadow: 0 2px 5px orange;
+
+    }
+
+
+.product-slider  .box img {
+    width:20rem;
+    height: 20rem;
+}
+ h3 {
+    font-size: 1.5rem;
+}
+.product-slider  .box .price {
+font-size: 1.5rem;
+}
+.product-slider  .box .stars i {
+    font-size: 2rem;
+    color: var(--orange);
+}
+.product-slider  .box button {
+    background-color: var(--orange);
+    color: white;
+    font-weight: 500;
+
+
+}
+.product-slider  .box button a{
+    color: white;
+ 
+}
+
+
+
+/* categories section starts */
+.categories .box-container {
+    background-color: #eee;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem , 1fr));
+    padding:2rem 15rem;
+    font-size: 1.5rem;
+ 
+    gap: 3rem;
+}
+.categories .box-container .box {
+    
+    text-align: center;
+    border: var(--border);
+    font-family: inherit;
+        display: flex;
+        align-items: center;
+       
+        flex-direction: column;
+        height: 40rem;
+        padding: 4rem 4rem;
+        background: #fffdfd;
+        box-shadow: var(--box-shadow);
+        outline: var(--outline);
+        
+        gap: 2rem;
+}
+.categories .box-container img {
+    width:20rem;
+    height: 20rem;
+}
+.categories  .box-container button a {
+    color: white;
+}
+
+.categories  .box:hover {
+    border: 2px solid var(--orange-hover);
+    border-radius: 4px;
+    box-shadow: 0 2px 5px orange;
+    transition: .3s ease-in-out;
+
+}
+
+/* review section starts */
+
+.review .review-slider {
+    padding: 1rem;
+    width: 75%;
+
+}
+.review .review-slider .box {
+    background-color: #fff;
+    border-radius: .5rem;
+    text-align: center;
+    padding: 3rem 2rem;
+    outline: var(--outline);
+    box-shadow: var(--box-shadow);
+    transition: .2s linear;
+    height: 40rem;
+   
+}
+
+.review .review-slider .box img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+}
+.review .review-slider .box p {
+    font-size: 1.4rem;
+    height: 20rem;
+   
+
+}
+.review .review-slider .box .stars i {
+    font-size: 2rem;
+    color: var(--orange)
+}
+
+.review .review-slider .box img , h3, p , .stars {
+    margin-bottom: 5px;
+}
+
+
+
+/* blogs section */
+.blogs .box-container {
+    margin-inline: 5rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.blogs .box-container .box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px
+    ;
+    width: 22%;
+    height: 38rem;
+    margin-bottom: 20px;
+   
+
+}
+.blogs .box-container .box .content {
+    background-color: white;
+    padding: 2rem;
+    padding-top: 0;
+    
+}
+
+.blogs .box-container .box  img {
+    width: 100%;
+    height: 22rem;
+}
+.blogs .box-container .box .content .icons  a {
+     background-color: none;
+     font-size: 1rem;
+}
+.blogs .box-container .box .content .icons  #user {
+    text-align: left;
+    padding-left: 0;
+
+}
+.blogs .box-container .box .content .icons  #time {
+    text-align: right;
+}
+.blogs .box-container .box .content h3 {
+    color: black;
+    font-size: 1.3rem;
+}
+.blogs .box-container .box .content p {
+    color: var(--black);
+    font-size: 1.1rem;
+    text-align: left;
+}
+.blogs .box-container .box .content .icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+    height: 20px;
+
+}
+.blogs .box-container .box .content .icons a {
+    font-size: 1rem;
+    padding-left: 10px;
+    
+    background-color: white;
+    color:var(--light-color);
+}
+.blogs .box-container .box .content .btn {
+    background-color: var(--orange);
+    font-size: 1.4rem;
+    height: 30px;
+}
+
+
+
+/* footer section */
+.footer {
+    background-color: #fff;
+    border-top: var(--border);
+
+}
+
+ .footer .box-container {
+    background-color: #eee;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem , 1fr));
+    padding:2rem 10rem;
+    font-size: 1.5rem;
+ 
+    gap: 3rem;
+ }
+.footer .box-container .inbox h3 {
+    font-size: 2.5rem;
+    color: var(--black);
+    padding: 1rem 0;
+}
+.footer .box-container .inbox h3 i {
+    color: var(--orange);
+}
+ .footer .box-container .inbox a {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+ }
+ .footer .box-container .inbox a:hover {
+    color: var(--orange);
+    
+ }
+ .footer .box-container .inbox a i {
+   margin-right: 5px;
+ }
+ .footer .box-container .inbox p {
+    line-height: 1.8rem;
+    font-size: 1.5rem;
+    color: var(--light-color);
+    padding: 1rem 0; 
+ }
+
+
+ .inbox .email {
+    width: 100%;
+    padding: .8rem .5rem;
+    margin-bottom: 1rem;
+
+ }
+ .inbox img {
+    width: 100%;
+ }
+
+ .inbox .share {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+ }
